@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 int main() {
@@ -11,27 +10,31 @@ int main() {
     printf("Enter the value of b: ");
     scanf("%f", &b);
 
-    printf("Enter the operator (+, -, *, /): ");
+    printf("Enter the operator (+, -, *, /,%): ");
     scanf(" %c", &o);  
 
-    printf("You entered: %.1f %c %.1f\n", a, o, b);
+    printf("You entered: %.0f %c %.0f\n", a, o, b);
    switch(o){
        case '+':
-       printf("%.1f %c %.1f = %.1f", a,o,b,a+b);
+       printf("%.0f %c %.0f = %.0f", a,o,b,a+b);
        break;
        case '-':
-       printf("%.1f %c %.1f = %.1f",a,o,b,a-b);
+       printf("%.0f %c %.0f = %.0f",a,o,b,a-b);
        break;
        case '*':
-       printf("%.1f %c %.1f = %.1f",a,o,b,a*b);
+       printf("%.0f %c %.0f = %.0f",a,o,b,a*b);
        break;
       case '/':
       if(b==0)
       {
           printf("the divition is unvalid");
       }else{
-          printf("%.1f %c %.1f = %.1f",a,o,b,(float)a/b);
+          printf("%.0f %c %.0f = %.3f",a,o,b,a/b);
       }
+      break;
+      case '%':
+      printf("%.0f %c %.0f = %d",a,o,b,(int)a%(int)b);
+      break;
    
 }
     return 0;
